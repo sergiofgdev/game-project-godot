@@ -10,5 +10,5 @@ Corto,  pero con mucho cariño y muchas horas detrás de aprendizaje.
 
 En esta pequeña demo al más puro estilo de The Legend of Zelda, encarnaremos el control de un muchacho en su instituto en el cual intentará buscar a sus amigos mientras mata a los virus que se encuentra por el camino.
 
-El videojuego lo podéis probar en [enlace](https://sergiofgdev.itch.io/pesadilla-en-el-instituto) y podéis leer la 
-[Memoria.pdf](https://github.com/sergiofgdev/godot_project_game/files/9473582/Memoria.pdf)para ver como lo hice.
+El videojuego lo podéis probar en [itch.io](https://sergiofgdev.itch.io/pesadilla-en-el-instituto) y podéis leer la 
+[memoria](https://github.com/sergiofgdev/godot_project_game/files/9473582/Memoria.pdf)para ver como lo hice.
