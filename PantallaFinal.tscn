@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Interfaz/MensajeFinal.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Musica y Sonidos/Victory!.wav" type="AudioStream" id=2]
+[ext_resource path="res://PantallaFinal.gd" type="Script" id=3]
+[ext_resource path="res://Interfaz/menu_salir.png" type="Texture" id=4]
+[ext_resource path="res://Interfaz/menu_salir_focused.png" type="Texture" id=5]
+
+[node name="PantallaFinal" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="MensajeFinal" parent="." instance=ExtResource( 1 )]
+visible = true
+position = Vector2( 160, 88 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+autoplay = true
+
+[node name="TextureButtonSalir" type="TextureButton" parent="."]
+margin_left = 240.0
+margin_top = 144.0
+margin_right = 340.0
+margin_bottom = 161.0
+texture_normal = ExtResource( 4 )
+texture_focused = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="TextureButtonSalir" to="." method="_on_TextureButtonSalir_pressed"]

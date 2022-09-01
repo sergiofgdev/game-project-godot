@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/MusicaMundo.ogg-9b1d34757bb8fe80a89355e6341ea67c.oggstr"
+
+[deps]
+
+source_file="res://Musica y Sonidos/MusicaMundo.ogg"
+dest_files=[ "res://.import/MusicaMundo.ogg-9b1d34757bb8fe80a89355e6341ea67c.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

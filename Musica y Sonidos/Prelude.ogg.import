@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Prelude.ogg-152689c973db2a7115a06085be80af1a.oggstr"
+
+[deps]
+
+source_file="res://Musica y Sonidos/Prelude.ogg"
+dest_files=[ "res://.import/Prelude.ogg-152689c973db2a7115a06085be80af1a.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Unpause.wav-65e565422828ceb49e1c3ae4586fd9bf.sample"
+
+[deps]
+
+source_file="res://Musica y Sonidos/Unpause.wav"
+dest_files=[ "res://.import/Unpause.wav-65e565422828ceb49e1c3ae4586fd9bf.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

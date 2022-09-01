@@ -1,0 +1,446 @@
+[gd_scene load_steps=28 format=2]
+
+[ext_resource path="res://Jugador/Jugador.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Mundo/Hierba.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Mundo/Barandilla.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Enemigos/Virus.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Interfaz/SaludUI.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Mundo/PuertaCentral.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Mundo/VallaDerecha.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Mundo/Banco.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Mundo/Mundo1.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Mundo/tejadillo.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Mundo/Valla.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Mundo/barandillaDerecha.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Mundo/Arbol.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Mundo/PorteriaDerecha.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Mundo/PorteriaIzquierda.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Musica y Sonidos/MusicaMundo.ogg" type="AudioStream" id=16]
+[ext_resource path="res://Camera2D.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Mundo/NPC_Abel.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Mundo/NPC_Jairo.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Mundo/NPC_Niko.tscn" type="PackedScene" id=20]
+[ext_resource path="res://Mundo/NPC_Samuel.tscn" type="PackedScene" id=21]
+[ext_resource path="res://Mundo/Area2DEntrada.tscn" type="PackedScene" id=22]
+[ext_resource path="res://Mundo/NPC_Policia.tscn" type="PackedScene" id=23]
+[ext_resource path="res://Mundo/NPC_OscarNoa.tscn" type="PackedScene" id=24]
+[ext_resource path="res://Interfaz/DialogBox.tscn" type="PackedScene" id=25]
+[ext_resource path="res://Mundo/Basura.tscn" type="PackedScene" id=26]
+[ext_resource path="res://Mundo/Basura2.tscn" type="PackedScene" id=27]
+
+[node name="Mundo" type="Node2D"]
+
+[node name="Mundo1" parent="." instance=ExtResource( 9 )]
+position = Vector2( -204.849, -378.038 )
+
+[node name="Area2DEntrada" parent="." instance=ExtResource( 22 )]
+position = Vector2( -232.437, -678.291 )
+
+[node name="YSort" type="YSort" parent="."]
+
+[node name="Objetos" type="YSort" parent="YSort"]
+
+[node name="Barandilla" parent="YSort/Objetos" instance=ExtResource( 3 )]
+position = Vector2( -50.8411, -516.776 )
+
+[node name="barandillaDerecha" parent="YSort/Objetos" instance=ExtResource( 12 )]
+position = Vector2( 679.099, -517.933 )
+
+[node name="tejadillo" parent="YSort/Objetos" instance=ExtResource( 10 )]
+position = Vector2( -455.727, -15.8313 )
+
+[node name="VallaDerecha" parent="YSort/Objetos" instance=ExtResource( 7 )]
+visible = false
+position = Vector2( 918.567, 13.02 )
+
+[node name="PuertaCentral" parent="YSort/Objetos" instance=ExtResource( 6 )]
+visible = false
+position = Vector2( 244.002, 21.7827 )
+
+[node name="Valla" parent="YSort/Objetos" instance=ExtResource( 11 )]
+position = Vector2( 912.908, 23.698 )
+
+[node name="Arboles" type="YSort" parent="YSort/Objetos"]
+
+[node name="Arbol" parent="YSort/Objetos/Arboles" instance=ExtResource( 13 )]
+position = Vector2( -99.4634, 16.9042 )
+
+[node name="Arbol2" parent="YSort/Objetos/Arboles" instance=ExtResource( 13 )]
+position = Vector2( -100.923, 63.33 )
+
+[node name="Bancos" type="YSort" parent="YSort/Objetos"]
+
+[node name="Banco" parent="YSort/Objetos/Bancos" instance=ExtResource( 8 )]
+position = Vector2( -152.747, 19.9503 )
+
+[node name="Banco19" parent="YSort/Objetos/Bancos" instance=ExtResource( 8 )]
+position = Vector2( 48.5511, -538.861 )
+
+[node name="Banco20" parent="YSort/Objetos/Bancos" instance=ExtResource( 8 )]
+position = Vector2( 190.296, -538.583 )
+
+[node name="Banco21" parent="YSort/Objetos/Bancos" instance=ExtResource( 8 )]
+position = Vector2( 390.57, -537.196 )
+
+[node name="Banco22" parent="YSort/Objetos/Bancos" instance=ExtResource( 8 )]
+position = Vector2( 575.309, -540.248 )
+
+[node name="Banco2" parent="YSort/Objetos/Bancos" instance=ExtResource( 8 )]
+position = Vector2( -286.579, 19.5042 )
+
+[node name="Banco3" parent="YSort/Objetos/Bancos" instance=ExtResource( 8 )]
+position = Vector2( -442.383, 19.5042 )
+
+[node name="Banco4" parent="YSort/Objetos/Bancos" instance=ExtResource( 8 )]
+position = Vector2( -583.222, 18.1839 )
+
+[node name="Banco7" parent="YSort/Objetos/Bancos" instance=ExtResource( 8 )]
+position = Vector2( -584.303, 90.5915 )
+
+[node name="Banco8" parent="YSort/Objetos/Bancos" instance=ExtResource( 8 )]
+position = Vector2( -441.649, 92.2126 )
+
+[node name="Banco9" parent="YSort/Objetos/Bancos" instance=ExtResource( 8 )]
+position = Vector2( -288.188, 93.2933 )
+
+[node name="Banco10" parent="YSort/Objetos/Bancos" instance=ExtResource( 8 )]
+position = Vector2( -152.018, 93.2933 )
+
+[node name="Banco11" parent="YSort/Objetos/Bancos" instance=ExtResource( 8 )]
+position = Vector2( 352.134, 90.5915 )
+
+[node name="Banco15" parent="YSort/Objetos/Bancos" instance=ExtResource( 8 )]
+position = Vector2( 353.104, 15.2088 )
+
+[node name="Banco16" parent="YSort/Objetos/Bancos" instance=ExtResource( 8 )]
+position = Vector2( 522.311, 15.2088 )
+
+[node name="Banco17" parent="YSort/Objetos/Bancos" instance=ExtResource( 8 )]
+position = Vector2( 715.459, 10.3559 )
+
+[node name="Banco18" parent="YSort/Objetos/Bancos" instance=ExtResource( 8 )]
+position = Vector2( 868.489, 10.0323 )
+
+[node name="Banco12" parent="YSort/Objetos/Bancos" instance=ExtResource( 8 )]
+position = Vector2( 524.478, 90.0944 )
+
+[node name="Banco13" parent="YSort/Objetos/Bancos" instance=ExtResource( 8 )]
+position = Vector2( 718.094, 91.7587 )
+
+[node name="Banco14" parent="YSort/Objetos/Bancos" instance=ExtResource( 8 )]
+position = Vector2( 869.825, 92.8683 )
+
+[node name="Banco5" parent="YSort/Objetos/Bancos" instance=ExtResource( 8 )]
+position = Vector2( -699.415, 19.5042 )
+
+[node name="Banco6" parent="YSort/Objetos/Bancos" instance=ExtResource( 8 )]
+position = Vector2( -702.117, 90.2908 )
+
+[node name="Porterias" type="YSort" parent="YSort/Objetos"]
+
+[node name="PorteriaDerecha3" parent="YSort/Objetos/Porterias" instance=ExtResource( 15 )]
+position = Vector2( 318.457, -283.039 )
+
+[node name="PorteriaDerecha4" parent="YSort/Objetos/Porterias" instance=ExtResource( 15 )]
+position = Vector2( -461.438, -160.001 )
+
+[node name="PorteriaDerecha" parent="YSort/Objetos/Porterias" instance=ExtResource( 14 )]
+position = Vector2( 805.449, -283.996 )
+
+[node name="PorteriaDerecha2" parent="YSort/Objetos/Porterias" instance=ExtResource( 14 )]
+position = Vector2( -184.025, -160.008 )
+
+[node name="Hierba" type="YSort" parent="YSort/Objetos"]
+
+[node name="Hierba" parent="YSort/Objetos/Hierba" instance=ExtResource( 2 )]
+position = Vector2( -275.362, 71.1629 )
+
+[node name="Hierba2" parent="YSort/Objetos/Hierba" instance=ExtResource( 2 )]
+position = Vector2( -290.44, 26.9652 )
+
+[node name="Hierba3" parent="YSort/Objetos/Hierba" instance=ExtResource( 2 )]
+position = Vector2( -260.044, 71.6076 )
+
+[node name="Hierba4" parent="YSort/Objetos/Hierba" instance=ExtResource( 2 )]
+position = Vector2( -136.864, -64.0493 )
+
+[node name="Hierba5" parent="YSort/Objetos/Hierba" instance=ExtResource( 2 )]
+position = Vector2( -244.569, 71.6202 )
+
+[node name="Hierba6" parent="YSort/Objetos/Hierba" instance=ExtResource( 2 )]
+position = Vector2( -290.038, 70.8333 )
+
+[node name="Hierba7" parent="YSort/Objetos/Hierba" instance=ExtResource( 2 )]
+position = Vector2( -156.703, 71.382 )
+
+[node name="Hierba8" parent="YSort/Objetos/Hierba" instance=ExtResource( 2 )]
+position = Vector2( 56.0285, 60.6696 )
+
+[node name="Hierba21" parent="YSort/Objetos/Hierba" instance=ExtResource( 2 )]
+position = Vector2( 254.834, -541.304 )
+
+[node name="Hierba22" parent="YSort/Objetos/Hierba" instance=ExtResource( 2 )]
+position = Vector2( 287.565, -541.027 )
+
+[node name="Hierba23" parent="YSort/Objetos/Hierba" instance=ExtResource( 2 )]
+position = Vector2( 271.477, -541.027 )
+
+[node name="Hierba26" parent="YSort/Objetos/Hierba" instance=ExtResource( 2 )]
+position = Vector2( 704.559, -521.751 )
+
+[node name="Hierba25" parent="YSort/Objetos/Hierba" instance=ExtResource( 2 )]
+position = Vector2( 737.291, -521.474 )
+
+[node name="Hierba24" parent="YSort/Objetos/Hierba" instance=ExtResource( 2 )]
+position = Vector2( 721.202, -521.474 )
+
+[node name="Hierba29" parent="YSort/Objetos/Hierba" instance=ExtResource( 2 )]
+position = Vector2( 713.637, -513.371 )
+
+[node name="Hierba30" parent="YSort/Objetos/Hierba" instance=ExtResource( 2 )]
+position = Vector2( -319.599, -557.902 )
+
+[node name="Hierba31" parent="YSort/Objetos/Hierba" instance=ExtResource( 2 )]
+position = Vector2( -311.038, -566.702 )
+
+[node name="Hierba32" parent="YSort/Objetos/Hierba" instance=ExtResource( 2 )]
+position = Vector2( -301.525, -575.977 )
+
+[node name="Hierba33" parent="YSort/Objetos/Hierba" instance=ExtResource( 2 )]
+position = Vector2( -293.201, -585.252 )
+
+[node name="Hierba34" parent="YSort/Objetos/Hierba" instance=ExtResource( 2 )]
+position = Vector2( -283.45, -594.052 )
+
+[node name="Hierba35" parent="YSort/Objetos/Hierba" instance=ExtResource( 2 )]
+position = Vector2( -304.378, -557.427 )
+
+[node name="Hierba36" parent="YSort/Objetos/Hierba" instance=ExtResource( 2 )]
+position = Vector2( -288.444, -557.189 )
+
+[node name="Hierba37" parent="YSort/Objetos/Hierba" instance=ExtResource( 2 )]
+position = Vector2( -288.444, -557.189 )
+
+[node name="Hierba28" parent="YSort/Objetos/Hierba" instance=ExtResource( 2 )]
+position = Vector2( 746.369, -513.094 )
+
+[node name="Hierba27" parent="YSort/Objetos/Hierba" instance=ExtResource( 2 )]
+position = Vector2( 730.28, -513.094 )
+
+[node name="Hierba9" parent="YSort/Objetos/Hierba" instance=ExtResource( 2 )]
+position = Vector2( -116.974, -64.8015 )
+
+[node name="Hierba10" parent="YSort/Objetos/Hierba" instance=ExtResource( 2 )]
+position = Vector2( 269.149, 88.879 )
+
+[node name="Hierba11" parent="YSort/Objetos/Hierba" instance=ExtResource( 2 )]
+position = Vector2( 285.446, 89.014 )
+
+[node name="Hierba12" parent="YSort/Objetos/Hierba" instance=ExtResource( 2 )]
+position = Vector2( 301.623, 88.6904 )
+
+[node name="Hierba13" parent="YSort/Objetos/Hierba" instance=ExtResource( 2 )]
+position = Vector2( 437.506, 49.8667 )
+
+[node name="Hierba14" parent="YSort/Objetos/Hierba" instance=ExtResource( 2 )]
+position = Vector2( 454.653, 49.8667 )
+
+[node name="Hierba15" parent="YSort/Objetos/Hierba" instance=ExtResource( 2 )]
+position = Vector2( 577.595, 24.9549 )
+
+[node name="Hierba16" parent="YSort/Objetos/Hierba" instance=ExtResource( 2 )]
+position = Vector2( 593.124, 31.749 )
+
+[node name="Hierba17" parent="YSort/Objetos/Hierba" instance=ExtResource( 2 )]
+position = Vector2( 610.271, 24.9549 )
+
+[node name="Hierba18" parent="YSort/Objetos/Hierba" instance=ExtResource( 2 )]
+position = Vector2( 771.066, 76.7198 )
+
+[node name="Hierba19" parent="YSort/Objetos/Hierba" instance=ExtResource( 2 )]
+position = Vector2( 787.89, 76.7198 )
+
+[node name="Hierba20" parent="YSort/Objetos/Hierba" instance=ExtResource( 2 )]
+position = Vector2( 780.772, 60.8668 )
+
+[node name="Basura" type="YSort" parent="YSort/Objetos"]
+
+[node name="Basura" parent="YSort/Objetos/Basura" instance=ExtResource( 26 )]
+position = Vector2( 21.9914, -92.0381 )
+
+[node name="Basura6" parent="YSort/Objetos/Basura" instance=ExtResource( 26 )]
+position = Vector2( 184.594, -268.506 )
+
+[node name="Basura8" parent="YSort/Objetos/Basura" instance=ExtResource( 26 )]
+position = Vector2( -103.427, -497.914 )
+
+[node name="Basura9" parent="YSort/Objetos/Basura" instance=ExtResource( 26 )]
+position = Vector2( -491.025, -297.497 )
+
+[node name="Basura10" parent="YSort/Objetos/Basura" instance=ExtResource( 26 )]
+position = Vector2( -336.616, -75.0215 )
+
+[node name="Basura2" parent="YSort/Objetos/Basura" instance=ExtResource( 27 )]
+position = Vector2( 333.801, -80.519 )
+
+[node name="Basura7" parent="YSort/Objetos/Basura" instance=ExtResource( 27 )]
+position = Vector2( -124.385, -268.961 )
+
+[node name="Basura3" parent="YSort/Objetos/Basura" instance=ExtResource( 27 )]
+position = Vector2( 826.65, -55.3093 )
+
+[node name="Basura4" parent="YSort/Objetos/Basura" instance=ExtResource( 27 )]
+position = Vector2( 742.197, -221.063 )
+
+[node name="Basura5" parent="YSort/Objetos/Basura" instance=ExtResource( 27 )]
+position = Vector2( 703.122, -428.412 )
+
+[node name="Personajes" type="YSort" parent="YSort"]
+
+[node name="NPC_Policia" parent="YSort/Personajes" instance=ExtResource( 23 )]
+position = Vector2( -58.2716, -513.692 )
+
+[node name="NPC_Abel" parent="YSort/Personajes" instance=ExtResource( 18 )]
+position = Vector2( -370.819, 48.72 )
+
+[node name="NPC_Jairo" parent="YSort/Personajes" instance=ExtResource( 19 )]
+position = Vector2( -277.409, -566.854 )
+
+[node name="NPC_Niko" parent="YSort/Personajes" instance=ExtResource( 20 )]
+position = Vector2( -672.612, -71.0869 )
+
+[node name="NPC_OscarNoa" parent="YSort/Personajes" instance=ExtResource( 24 )]
+position = Vector2( 564.803, 48.8774 )
+
+[node name="NPC_Samuel" parent="YSort/Personajes" instance=ExtResource( 21 )]
+position = Vector2( 741.378, -660.263 )
+
+[node name="Jugador" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 184.006, 65.1191 )
+
+[node name="Camera2D" parent="YSort/Jugador" instance=ExtResource( 17 )]
+
+[node name="TopLeft" parent="YSort/Jugador/Camera2D/Limits" index="0"]
+position = Vector2( -881.644, -877.327 )
+
+[node name="BottonRight" parent="YSort/Jugador/Camera2D/Limits" index="1"]
+position = Vector2( 927.132, 240.939 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="YSort/Jugador"]
+visible = false
+position = Vector2( 0.498993, -5.4713 )
+stream = ExtResource( 16 )
+
+[node name="Enemigos" type="YSort" parent="YSort"]
+
+[node name="Virus" parent="YSort/Enemigos" instance=ExtResource( 4 )]
+position = Vector2( -106.905, -355.575 )
+
+[node name="Virus2" parent="YSort/Enemigos" instance=ExtResource( 4 )]
+position = Vector2( -59.0066, -187.3 )
+
+[node name="Virus3" parent="YSort/Enemigos" instance=ExtResource( 4 )]
+position = Vector2( 2.41404, 72.763 )
+
+[node name="Virus25" parent="YSort/Enemigos" instance=ExtResource( 4 )]
+position = Vector2( 94.1522, -186.161 )
+
+[node name="Virus6" parent="YSort/Enemigos" instance=ExtResource( 4 )]
+position = Vector2( -206.263, 66.2924 )
+
+[node name="Virus24" parent="YSort/Enemigos" instance=ExtResource( 4 )]
+position = Vector2( -138.531, 51.7172 )
+
+[node name="Virus7" parent="YSort/Enemigos" instance=ExtResource( 4 )]
+position = Vector2( -462.988, 67.7153 )
+
+[node name="Virus23" parent="YSort/Enemigos" instance=ExtResource( 4 )]
+position = Vector2( -573.588, 59.999 )
+
+[node name="Virus27" parent="YSort/Enemigos" instance=ExtResource( 4 )]
+position = Vector2( -691.047, 69.43 )
+
+[node name="Virus8" parent="YSort/Enemigos" instance=ExtResource( 4 )]
+position = Vector2( -836.178, 63.0571 )
+
+[node name="Virus9" parent="YSort/Enemigos" instance=ExtResource( 4 )]
+position = Vector2( -513.835, -120.315 )
+
+[node name="Virus10" parent="YSort/Enemigos" instance=ExtResource( 4 )]
+position = Vector2( -358.646, -161.473 )
+
+[node name="Virus15" parent="YSort/Enemigos" instance=ExtResource( 4 )]
+position = Vector2( -396.461, -319.664 )
+
+[node name="Virus11" parent="YSort/Enemigos" instance=ExtResource( 4 )]
+position = Vector2( -264.764, -445.994 )
+
+[node name="Virus16" parent="YSort/Enemigos" instance=ExtResource( 4 )]
+position = Vector2( -251.529, -324.358 )
+
+[node name="Virus12" parent="YSort/Enemigos" instance=ExtResource( 4 )]
+position = Vector2( 135.182, -451.064 )
+
+[node name="Virus17" parent="YSort/Enemigos" instance=ExtResource( 4 )]
+position = Vector2( 97.0015, -342.18 )
+
+[node name="Virus22" parent="YSort/Enemigos" instance=ExtResource( 4 )]
+position = Vector2( 255.731, -134.606 )
+
+[node name="Virus13" parent="YSort/Enemigos" instance=ExtResource( 4 )]
+position = Vector2( 383.255, -430.28 )
+
+[node name="Virus26" parent="YSort/Enemigos" instance=ExtResource( 4 )]
+position = Vector2( 527.292, -347.116 )
+
+[node name="Virus18" parent="YSort/Enemigos" instance=ExtResource( 4 )]
+position = Vector2( 611.403, -449.187 )
+
+[node name="Virus14" parent="YSort/Enemigos" instance=ExtResource( 4 )]
+position = Vector2( 822.977, -456.478 )
+
+[node name="Virus5" parent="YSort/Enemigos" instance=ExtResource( 4 )]
+position = Vector2( 393.451, 64.1157 )
+
+[node name="Virus28" parent="YSort/Enemigos" instance=ExtResource( 4 )]
+position = Vector2( 743.256, 60.6862 )
+
+[node name="Virus4" parent="YSort/Enemigos" instance=ExtResource( 4 )]
+position = Vector2( 479.803, -124.608 )
+
+[node name="Virus21" parent="YSort/Enemigos" instance=ExtResource( 4 )]
+position = Vector2( 723.076, -101.919 )
+
+[node name="Virus20" parent="YSort/Enemigos" instance=ExtResource( 4 )]
+position = Vector2( 416.779, -251.917 )
+
+[node name="Virus19" parent="YSort/Enemigos" instance=ExtResource( 4 )]
+position = Vector2( 683.52, -261.608 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="SaludUI" parent="CanvasLayer" instance=ExtResource( 5 )]
+margin_left = 4.0
+margin_top = 6.0
+margin_right = 96.0
+margin_bottom = 20.0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 16 )
+autoplay = true
+
+[node name="DialogNode" parent="." instance=ExtResource( 25 )]
+margin_left = 24.0
+margin_top = -72.0
+margin_right = 24.0
+margin_bottom = -72.0
+
+[node name="DialogBox" parent="DialogNode" index="0"]
+margin_left = 64.0
+margin_top = 200.0
+margin_right = 266.0
+margin_bottom = 238.0
+
+[editable path="YSort/Jugador/Camera2D"]
+
+[editable path="DialogNode"]

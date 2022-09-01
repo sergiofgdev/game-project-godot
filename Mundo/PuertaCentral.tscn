@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Mundo/muro_centro_puerta.png" type="Texture" id=1]
+
+[node name="PuertaCentral" type="StaticBody2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -53.2872, -38.3189 )
+texture = ExtResource( 1 )

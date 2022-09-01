@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Area2D.gd" type="Script" id=1]
+[ext_resource path="res://Mundo/godot.png" type="Texture" id=2]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 27.0068, 31.3969 )
+
+[node name="Area2DEntrada" type="Area2D"]
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+visible = false
+position = Vector2( 101.576, 92.0582 )
+scale = Vector2( 0.0593929, 0.0652118 )
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 101.686, 93.2629 )
+shape = SubResource( 1 )
+[connection signal="area_entered" from="." to="." method="_on_Area2D_area_entered"]

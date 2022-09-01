@@ -1,0 +1,151 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://Mundo/NPC_Abel.gd" type="Script" id=1]
+[ext_resource path="res://Enemigos/DeteccionJugador.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Sombras/sombraMedia.png" type="Texture" id=3]
+[ext_resource path="res://CG pixel 4x5.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://Interfaz/bocadillo_texto.png" type="Texture" id=5]
+[ext_resource path="res://Mundo/oscar_noa.png" type="Texture" id=6]
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 6 )
+region = Rect2( 0, 0, 129, 36 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 6 )
+region = Rect2( 129, 0, 129, 36 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 6 )
+region = Rect2( 258, 0, 129, 36 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 6 )
+region = Rect2( 387, 0, 129, 36 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 6 )
+region = Rect2( 516, 0, 129, 36 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 6 )
+region = Rect2( 645, 0, 129, 36 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 6 )
+region = Rect2( 774, 0, 129, 36 )
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 13 ), SubResource( 13 ), SubResource( 13 ), SubResource( 13 ), SubResource( 13 ), SubResource( 13 ), SubResource( 13 ), SubResource( 13 ) ],
+"loop": true,
+"name": "New Anim",
+"speed": 10.0
+} ]
+
+[sub_resource type="DynamicFont" id=4]
+size = 5
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 4 )
+
+[sub_resource type="CapsuleShape2D" id=5]
+radius = 7.64566
+height = 14.3103
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 108.493, 27.561 )
+
+[sub_resource type="RectangleShape2D" id=14]
+extents = Vector2( 10.5196, 8.87919 )
+
+[node name="NPC_OscarNoa" type="KinematicBody2D"]
+script = ExtResource( 1 )
+
+[node name="YSort" type="YSort" parent="."]
+
+[node name="sombra" type="Sprite" parent="YSort"]
+modulate = Color( 1, 1, 1, 0.478431 )
+position = Vector2( -57.3822, 19.6454 )
+texture = ExtResource( 3 )
+
+[node name="sombra2" type="Sprite" parent="YSort"]
+modulate = Color( 1, 1, 1, 0.478431 )
+position = Vector2( 51.377, 19.6454 )
+scale = Vector2( 1.39106, 1 )
+texture = ExtResource( 3 )
+
+[node name="Animacion" type="AnimatedSprite" parent="."]
+position = Vector2( -2.02487, 1.37691 )
+frames = SubResource( 3 )
+animation = "New Anim"
+frame = 12
+playing = true
+
+[node name="Sprite" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 6 )
+hframes = 5
+
+[node name="Bocadillo" type="Sprite" parent="."]
+visible = false
+position = Vector2( -99.2653, -12.9771 )
+scale = Vector2( 0.899895, 0.782374 )
+texture = ExtResource( 5 )
+flip_h = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Bocadillo"]
+modulate = Color( 0, 0, 0, 1 )
+margin_left = -32.0
+margin_top = -14.0
+margin_right = 34.0
+margin_bottom = 12.0
+custom_fonts/normal_font = SubResource( 4 )
+bbcode_enabled = true
+bbcode_text = "
+Noa, traeme la pelota!!"
+text = "
+Noa, traeme la pelota!!"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Bocadillo2" type="Sprite" parent="."]
+visible = false
+position = Vector2( 74.2916, -10.3197 )
+scale = Vector2( 0.676934, 0.736558 )
+texture = ExtResource( 5 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Bocadillo2"]
+modulate = Color( 0, 0, 0, 1 )
+margin_left = -32.0035
+margin_top = -11.0
+margin_right = 33.9965
+margin_bottom = 11.6783
+custom_fonts/normal_font = SubResource( 4 )
+bbcode_enabled = true
+bbcode_text = "
+[wave]GUAU GUAU GUAU"
+text = "
+GUAU GUAU GUAU"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -57.3025, 7.82082 )
+shape = SubResource( 5 )
+
+[node name="DeteccionNPC" parent="." instance=ExtResource( 2 )]
+position = Vector2( -52.544, 7.54697 )
+
+[node name="CollisionShape2D" parent="DeteccionNPC" index="0"]
+position = Vector2( 56.141, -0.799095 )
+shape = SubResource( 6 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2( 51.8952, 9.93738 )
+shape = SubResource( 14 )
+
+[editable path="DeteccionNPC"]

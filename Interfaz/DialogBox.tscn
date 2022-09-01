@@ -1,0 +1,99 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Interfaz/dialog_box.png" type="Texture" id=1]
+[ext_resource path="res://CG pixel 4x5.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Interfaz/dialog_box_boton.png" type="Texture" id=3]
+[ext_resource path="res://Interfaz/DialogBox.gd" type="Script" id=4]
+[ext_resource path="res://Interfaz/cara.png" type="Texture" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 5
+font_data = ExtResource( 2 )
+
+[sub_resource type="Animation" id=2]
+resource_name = "IDLE"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 192.473, 28.704 ), Vector2( 192.473, 30.084 ) ]
+}
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 5 )
+region = Rect2( 0, 0, 28, 32 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 5 )
+region = Rect2( 28, 0, 28, 32 )
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ SubResource( 3 ), SubResource( 4 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="DialogNode" type="Control"]
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="DialogBox" type="Control" parent="."]
+margin_left = 74.0
+margin_top = 109.0
+margin_right = 276.0
+margin_bottom = 147.0
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="DialogBox"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource( 1 )
+expand = true
+stretch_mode = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="DialogBox"]
+modulate = Color( 0.0156863, 0.0156863, 0.0156863, 1 )
+margin_left = 38.1145
+margin_top = 5.0974
+margin_right = 173.114
+margin_bottom = 31.0974
+custom_fonts/normal_font = SubResource( 1 )
+bbcode_text = "ESTO ES UN TEXTO DE PRUEBA
+"
+text = "ESTO ES UN TEXTO DE PRUEBA
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="dialog_box_boton" type="Sprite" parent="DialogBox"]
+position = Vector2( 192.473, 28.704 )
+texture = ExtResource( 3 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="DialogBox/dialog_box_boton"]
+autoplay = "IDLE"
+anims/IDLE = SubResource( 2 )
+
+[node name="Tween" type="Tween" parent="DialogBox"]
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="DialogBox"]
+position = Vector2( 18.9071, 18.907 )
+scale = Vector2( 0.838619, 0.858791 )
+frames = SubResource( 5 )
+frame = 1
+playing = true
+[connection signal="tween_completed" from="DialogBox/Tween" to="DialogBox" method="_on_Tween_tween_completed"]

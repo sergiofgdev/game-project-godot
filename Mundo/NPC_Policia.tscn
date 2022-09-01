@@ -1,0 +1,90 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://Mundo/NPC_Abel.gd" type="Script" id=1]
+[ext_resource path="res://Enemigos/DeteccionJugador.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Sombras/sombraMedia.png" type="Texture" id=3]
+[ext_resource path="res://Interfaz/bocadillo_texto.png" type="Texture" id=4]
+[ext_resource path="res://Mundo/abel.png" type="Texture" id=5]
+[ext_resource path="res://CG pixel 4x5.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://Mundo/policia.png" type="Texture" id=7]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 7 )
+region = Rect2( 0, 0, 12, 24 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 7 )
+region = Rect2( 12, 0, 12, 24 )
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 8.0
+} ]
+
+[sub_resource type="DynamicFont" id=4]
+size = 5
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 6 )
+
+[sub_resource type="CapsuleShape2D" id=5]
+radius = 5.70593
+height = 14.3103
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 41.1519, 26.9084 )
+
+[node name="NPC_Policia" type="KinematicBody2D"]
+script = ExtResource( 1 )
+
+[node name="YSort" type="YSort" parent="."]
+
+[node name="sombra" type="Sprite" parent="YSort"]
+modulate = Color( 1, 1, 1, 0.478431 )
+position = Vector2( -1.25437, 13.3885 )
+texture = ExtResource( 3 )
+
+[node name="Animacion" type="AnimatedSprite" parent="."]
+position = Vector2( -2.02487, 1.37691 )
+frames = SubResource( 3 )
+animation = "Idle"
+frame = 1
+playing = true
+
+[node name="Sprite" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 5 )
+hframes = 6
+
+[node name="Bocadillo" type="Sprite" parent="."]
+position = Vector2( 40.5767, -22.4438 )
+texture = ExtResource( 4 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Bocadillo"]
+modulate = Color( 0, 0, 0, 1 )
+margin_left = -32.0035
+margin_top = -11.0
+margin_right = 33.9965
+margin_bottom = 11.6783
+custom_fonts/normal_font = SubResource( 4 )
+bbcode_enabled = true
+bbcode_text = "Una vez que entres no podras salir"
+text = "Una vez que entres no podras salir"
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -1.17467, 1.74797 )
+shape = SubResource( 5 )
+
+[node name="DeteccionNPC" parent="." instance=ExtResource( 2 )]
+
+[node name="CollisionShape2D" parent="DeteccionNPC" index="0"]
+position = Vector2( 28.1693, 1.27098 )
+shape = SubResource( 6 )
+
+[editable path="DeteccionNPC"]

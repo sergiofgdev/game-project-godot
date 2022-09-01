@@ -1,0 +1,99 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://Mundo/NPC_Abel.gd" type="Script" id=1]
+[ext_resource path="res://Sombras/sombraMedia.png" type="Texture" id=2]
+[ext_resource path="res://CG pixel 4x5.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Interfaz/bocadillo_texto.png" type="Texture" id=4]
+[ext_resource path="res://Mundo/abel.png" type="Texture" id=5]
+[ext_resource path="res://Enemigos/DeteccionJugador.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Mundo/NPC_medico.png" type="Texture" id=7]
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 7 )
+region = Rect2( 0, 0, 24, 24 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 7 )
+region = Rect2( 24, 0, 24, 24 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 7 )
+region = Rect2( 48, 0, 24, 24 )
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 7 )
+region = Rect2( 72, 0, 24, 24 )
+
+[sub_resource type="SpriteFrames" id=7]
+animations = [ {
+"frames": [ SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 5.0
+} ]
+
+[sub_resource type="DynamicFont" id=8]
+size = 5
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 3 )
+
+[sub_resource type="CapsuleShape2D" id=9]
+radius = 11.0563
+height = 7.66834
+
+[sub_resource type="RectangleShape2D" id=10]
+extents = Vector2( 45.7899, 23.6399 )
+
+[node name="NPC_Medico" type="KinematicBody2D"]
+script = ExtResource( 1 )
+
+[node name="YSort" type="YSort" parent="."]
+
+[node name="sombra" type="Sprite" parent="YSort"]
+modulate = Color( 1, 1, 1, 0.478431 )
+position = Vector2( -7.6173, 13.5894 )
+texture = ExtResource( 2 )
+
+[node name="Animacion" type="AnimatedSprite" parent="."]
+position = Vector2( -2.02487, 1.37691 )
+frames = SubResource( 7 )
+animation = "Idle"
+frame = 3
+playing = true
+
+[node name="Sprite" type="Sprite" parent="."]
+visible = false
+texture = ExtResource( 5 )
+hframes = 6
+
+[node name="Bocadillo" type="Sprite" parent="."]
+position = Vector2( 45.505, -20.6194 )
+scale = Vector2( 1.13502, 0.859375 )
+texture = ExtResource( 4 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Bocadillo"]
+modulate = Color( 0, 0, 0, 1 )
+margin_left = -34.0
+margin_top = -12.0
+margin_right = 31.0
+margin_bottom = 7.0
+custom_fonts/normal_font = SubResource( 8 )
+bbcode_enabled = true
+bbcode_text = "Te he restaurado la vida."
+text = "Te he restaurado la vida."
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -6.48253, 3.01093 )
+shape = SubResource( 9 )
+
+[node name="DeteccionNPC" parent="." instance=ExtResource( 6 )]
+
+[node name="CollisionShape2D" parent="DeteccionNPC" index="0"]
+position = Vector2( 20.5498, 3.9765 )
+shape = SubResource( 10 )
+
+[editable path="DeteccionNPC"]

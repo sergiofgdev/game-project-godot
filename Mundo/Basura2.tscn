@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Mundo/basura.png" type="Texture" id=1]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 36, 24 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 1 )
+region = Rect2( 36, 0, 36, 24 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 1 )
+region = Rect2( 72, 0, 36, 24 )
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="Basura" type="KinematicBody2D"]
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+position = Vector2( -0.340546, 1.36223 )
+frames = SubResource( 4 )
+frame = 2
+playing = true
+flip_h = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( -10.5336, -2.22907, -4.06308, -4.06035, -0.400528, -3.81618, 2.40743, -3.93826, 4.48288, -3.20575, 6.92458, -3.57201, 7.41292, -0.76405, 11.0755, -0.519878, 12.1742, 1.55557, 14.9822, 2.53225, 16.081, 5.95063, 15.4705, 8.39233, 7.29083, 8.6365, 5.0933, 7.53773, -0.888863, 7.0494, -7.1152, 7.0494, -17.6145, 6.9273, -17.9808, 3.50892, -9.31274, -0.519878, -8.94648, -2.59533 )

@@ -1,0 +1,120 @@
+[gd_scene load_steps=22 format=2]
+
+[ext_resource path="res://Enemigos/Virus.png" type="Texture" id=1]
+[ext_resource path="res://Sombras/sombraPequeña.png" type="Texture" id=2]
+[ext_resource path="res://Hitbox_hurtbox/Hurtbox.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Enemigos/Virus.gd" type="Script" id=4]
+[ext_resource path="res://Estadisticas.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Enemigos/DeteccionJugador.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Hitbox_hurtbox/Hitbox.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Hitbox_hurtbox/SoftCollisionComponent.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Enemigos/WanderController.tscn" type="PackedScene" id=9]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 17, 22 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 1 )
+region = Rect2( 17, 0, 17, 22 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 1 )
+region = Rect2( 34, 0, 17, 22 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 1 )
+region = Rect2( 51, 0, 17, 22 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 1 )
+region = Rect2( 68, 0, 17, 22 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 1 )
+region = Rect2( 85, 0, 17, 22 )
+
+[sub_resource type="SpriteFrames" id=7]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ) ],
+"loop": true,
+"name": "Flotar",
+"speed": 5.0
+} ]
+
+[sub_resource type="CircleShape2D" id=8]
+radius = 4.0253
+
+[sub_resource type="CapsuleShape2D" id=9]
+radius = 7.74896
+height = 4.45633
+
+[sub_resource type="CircleShape2D" id=12]
+radius = 83.754
+
+[sub_resource type="CircleShape2D" id=10]
+radius = 8.00907
+
+[sub_resource type="CircleShape2D" id=11]
+radius = 4.30103
+
+[node name="Virus" type="KinematicBody2D"]
+collision_layer = 16
+script = ExtResource( 4 )
+
+[node name="VirusAnimado" type="AnimatedSprite" parent="."]
+frames = SubResource( 7 )
+animation = "Flotar"
+frame = 3
+playing = true
+offset = Vector2( 0, -16 )
+
+[node name="Sombra" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 8 )
+
+[node name="Hurtbox" parent="." instance=ExtResource( 3 )]
+position = Vector2( 1.43132, -12.4312 )
+collision_layer = 8
+
+[node name="CollisionShape2D" parent="Hurtbox" index="0"]
+position = Vector2( -0.173157, -0.327652 )
+shape = SubResource( 9 )
+
+[node name="Estadisticas" parent="." instance=ExtResource( 5 )]
+max_health = 2
+
+[node name="DeteccionJugador" parent="." instance=ExtResource( 6 )]
+
+[node name="CollisionShape2D" parent="DeteccionJugador" index="0"]
+self_modulate = Color( 0.92549, 0, 0.172549, 0.529412 )
+position = Vector2( 0.123005, -0.211124 )
+shape = SubResource( 12 )
+
+[node name="Hitbox" parent="." instance=ExtResource( 7 )]
+position = Vector2( 1.33663, -13.2532 )
+collision_mask = 4
+
+[node name="CollisionShape2D" parent="Hitbox" index="0"]
+self_modulate = Color( 0.603922, 0.160784, 0.0745098, 0.670588 )
+position = Vector2( -0.0760956, -0.359735 )
+shape = SubResource( 10 )
+
+[node name="SoftCollision" parent="." instance=ExtResource( 8 )]
+
+[node name="CollisionShape2D" parent="SoftCollision" index="0"]
+shape = SubResource( 11 )
+
+[node name="WanderController" parent="." instance=ExtResource( 9 )]
+[connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
+[connection signal="no_health" from="Estadisticas" to="." method="_on_Estadisticas_no_health"]
+
+[editable path="Hurtbox"]
+
+[editable path="DeteccionJugador"]
+
+[editable path="Hitbox"]
+
+[editable path="SoftCollision"]

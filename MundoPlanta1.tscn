@@ -1,0 +1,167 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://Musica y Sonidos/Danger.ogg" type="AudioStream" id=1]
+[ext_resource path="res://Mundo/ParedMundo2.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Camera2D.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Mundo/MesaSilla.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Enemigos/VirusFinal.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Enemigos/Virus.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Mundo/NPC_MujerMiedo.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Mundo/NPC_Herido.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Mundo/Basura2.tscn" type="PackedScene" id=9]
+[ext_resource path="res://Mundo/Basura.tscn" type="PackedScene" id=10]
+[ext_resource path="res://Mundo/Area2DFin.tscn" type="PackedScene" id=11]
+[ext_resource path="res://Mundo/NPC_Medico.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Mundo/Mundo2.tscn" type="PackedScene" id=13]
+[ext_resource path="res://Interfaz/SaludUI.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Jugador/Jugador.tscn" type="PackedScene" id=22]
+
+[node name="Mundo" type="Node2D"]
+
+[node name="Mundo2" parent="." instance=ExtResource( 13 )]
+position = Vector2( -128, 440 )
+
+[node name="YSort" type="YSort" parent="."]
+
+[node name="VirusFinal" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 576, -72 )
+
+[node name="Virus" parent="YSort" instance=ExtResource( 6 )]
+position = Vector2( 149.833, 53.8814 )
+
+[node name="Virus2" parent="YSort" instance=ExtResource( 6 )]
+position = Vector2( 8, 104 )
+
+[node name="Virus3" parent="YSort" instance=ExtResource( 6 )]
+position = Vector2( -64, 176 )
+
+[node name="Virus4" parent="YSort" instance=ExtResource( 6 )]
+position = Vector2( 360, 96 )
+
+[node name="Virus5" parent="YSort" instance=ExtResource( 6 )]
+position = Vector2( 576, 96 )
+
+[node name="Virus6" parent="YSort" instance=ExtResource( 6 )]
+position = Vector2( 600, 96 )
+
+[node name="Virus7" parent="YSort" instance=ExtResource( 6 )]
+position = Vector2( 592, 88 )
+
+[node name="Virus8" parent="YSort" instance=ExtResource( 6 )]
+position = Vector2( 632, 96 )
+
+[node name="Virus9" parent="YSort" instance=ExtResource( 6 )]
+position = Vector2( 560, 80 )
+
+[node name="Virus10" parent="YSort" instance=ExtResource( 6 )]
+position = Vector2( 664, 88 )
+
+[node name="Virus11" parent="YSort" instance=ExtResource( 6 )]
+position = Vector2( 680, 104 )
+
+[node name="ParedMundo2" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( 681.556, 48.9428 )
+
+[node name="Objetos" type="YSort" parent="YSort"]
+
+[node name="MesaSilla2" parent="YSort/Objetos" instance=ExtResource( 4 )]
+position = Vector2( 328, -96 )
+
+[node name="MesaSilla3" parent="YSort/Objetos" instance=ExtResource( 4 )]
+position = Vector2( 328, -56 )
+
+[node name="MesaSilla4" parent="YSort/Objetos" instance=ExtResource( 4 )]
+position = Vector2( 328, -16 )
+
+[node name="MesaSilla6" parent="YSort/Objetos" instance=ExtResource( 4 )]
+position = Vector2( 376, -96 )
+
+[node name="MesaSilla5" parent="YSort/Objetos" instance=ExtResource( 4 )]
+position = Vector2( 376, -56 )
+
+[node name="MesaSilla7" parent="YSort/Objetos" instance=ExtResource( 4 )]
+position = Vector2( 376, -16 )
+
+[node name="MesaSilla9" parent="YSort/Objetos" instance=ExtResource( 4 )]
+position = Vector2( 424, -96 )
+
+[node name="MesaSilla8" parent="YSort/Objetos" instance=ExtResource( 4 )]
+position = Vector2( 424, -56 )
+
+[node name="MesaSilla10" parent="YSort/Objetos" instance=ExtResource( 4 )]
+position = Vector2( 424, -16 )
+
+[node name="MesaSilla12" parent="YSort/Objetos" instance=ExtResource( 4 )]
+position = Vector2( 472, -96 )
+
+[node name="MesaSilla11" parent="YSort/Objetos" instance=ExtResource( 4 )]
+position = Vector2( 472, -56 )
+
+[node name="MesaSilla13" parent="YSort/Objetos" instance=ExtResource( 4 )]
+position = Vector2( 472, -16 )
+
+[node name="Basura" type="YSort" parent="YSort"]
+
+[node name="Basura" parent="YSort/Basura" instance=ExtResource( 9 )]
+position = Vector2( 207.921, 240.834 )
+
+[node name="Basura3" parent="YSort/Basura" instance=ExtResource( 9 )]
+position = Vector2( 98.4577, 56.4057 )
+
+[node name="Basura7" parent="YSort/Basura" instance=ExtResource( 9 )]
+position = Vector2( 275.024, -127.679 )
+
+[node name="Basura2" parent="YSort/Basura" instance=ExtResource( 10 )]
+position = Vector2( 36.617, 56.3672 )
+
+[node name="Basura4" parent="YSort/Basura" instance=ExtResource( 10 )]
+position = Vector2( 503.338, 97.2798 )
+
+[node name="Basura5" parent="YSort/Basura" instance=ExtResource( 10 )]
+position = Vector2( 518.933, 66.8921 )
+
+[node name="Basura6" parent="YSort/Basura" instance=ExtResource( 10 )]
+position = Vector2( 550.267, 94.7911 )
+
+[node name="Jugador" parent="YSort" instance=ExtResource( 22 )]
+position = Vector2( 48, 336 )
+
+[node name="Camera2D" parent="YSort/Jugador" instance=ExtResource( 3 )]
+position = Vector2( -2.28873, -3.58511 )
+
+[node name="TopLeft" parent="YSort/Jugador/Camera2D/Limits" index="0"]
+position = Vector2( -164.999, -238 )
+
+[node name="BottonRight" parent="YSort/Jugador/Camera2D/Limits" index="1"]
+position = Vector2( 732.544, 388.058 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="YSort/Jugador"]
+visible = false
+position = Vector2( 0.498993, -5.4713 )
+stream = ExtResource( 1 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="SaludUI" parent="CanvasLayer" instance=ExtResource( 19 )]
+margin_left = 2.62788
+margin_top = 5.83973
+margin_right = 63.6279
+margin_bottom = 18.8397
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 1 )
+autoplay = true
+
+[node name="NPC_MujerMiedo" parent="." instance=ExtResource( 7 )]
+position = Vector2( 253.206, 183.261 )
+
+[node name="NPC_Herido" parent="." instance=ExtResource( 8 )]
+position = Vector2( 296, 104 )
+
+[node name="Area2DFin" parent="." instance=ExtResource( 11 )]
+position = Vector2( 646.435, -130.328 )
+
+[node name="NPC_Medico" parent="." instance=ExtResource( 12 )]
+position = Vector2( -32, 328 )
+
+[editable path="YSort/Jugador/Camera2D"]

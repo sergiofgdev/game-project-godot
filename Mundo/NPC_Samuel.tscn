@@ -1,0 +1,102 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://Mundo/NPC_Abel.gd" type="Script" id=1]
+[ext_resource path="res://Interfaz/bocadillo_texto.png" type="Texture" id=2]
+[ext_resource path="res://Enemigos/DeteccionJugador.tscn" type="PackedScene" id=3]
+[ext_resource path="res://CG pixel 4x5.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://Sombras/sombraMedia.png" type="Texture" id=5]
+[ext_resource path="res://Mundo/samuel.png" type="Texture" id=6]
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 6 )
+region = Rect2( 0, 0, 45, 16 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 6 )
+region = Rect2( 45, 0, 45, 16 )
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 6 )
+region = Rect2( 90, 0, 45, 16 )
+
+[sub_resource type="SpriteFrames" id=11]
+animations = [ {
+"frames": [ SubResource( 12 ), SubResource( 13 ), SubResource( 14 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 5.0
+} ]
+
+[sub_resource type="DynamicFont" id=4]
+size = 5
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 4 )
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 7.27669
+height = 1.82159
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 63.7134, 68.3628 )
+
+[node name="NPC_Samuel" type="KinematicBody2D"]
+script = ExtResource( 1 )
+
+[node name="YSort" type="YSort" parent="."]
+
+[node name="sombra" type="Sprite" parent="YSort"]
+modulate = Color( 1, 1, 1, 0.478431 )
+position = Vector2( 3.58891, 9.65761 )
+scale = Vector2( 1.702, 1 )
+texture = ExtResource( 5 )
+
+[node name="sombra2" type="Sprite" parent="YSort"]
+modulate = Color( 1, 1, 1, 0.478431 )
+position = Vector2( 16.7819, 2.14152 )
+scale = Vector2( 0.78635, 0.64595 )
+texture = ExtResource( 5 )
+
+[node name="Animacion" type="AnimatedSprite" parent="."]
+position = Vector2( -2.02487, 1.37691 )
+frames = SubResource( 11 )
+animation = "Idle"
+playing = true
+flip_h = true
+
+[node name="Bocadillo" type="Sprite" parent="."]
+visible = false
+position = Vector2( -40.6852, 23.7997 )
+texture = ExtResource( 2 )
+flip_h = true
+flip_v = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Bocadillo"]
+modulate = Color( 0, 0, 0, 1 )
+margin_left = -31.6117
+margin_top = -6.98047
+margin_right = 36.3883
+margin_bottom = 15.0195
+custom_fonts/normal_font = SubResource( 4 )
+bbcode_enabled = true
+bbcode_text = "
+[shake]RATATATATATATA"
+text = "
+RATATATATATATA"
+scroll_active = false
+scroll_following = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2( -3.04868, 2.58696 )
+shape = SubResource( 2 )
+
+[node name="DeteccionNPC" parent="." instance=ExtResource( 3 )]
+
+[node name="CollisionShape2D" parent="DeteccionNPC" index="0"]
+position = Vector2( -37.5977, 49.0118 )
+shape = SubResource( 3 )
+
+[editable path="DeteccionNPC"]
