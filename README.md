@@ -12,7 +12,7 @@ In this small demo, in the purest style of The Legend of Zelda, we take control 
 Made during the COVID-19 pandemic of 2020.
 
 
-You can play the videogame in [itch.io](https://sergiofgdev.itch.io/pesadilla-en-el-instituto) y podéis leer la 
-[memoria](https://github.com/sergiofgdev/godot_project_game/files/9473582/Memoria.pdf) para ver como lo hice.
+You can play the videogame in [itch.io](https://sergiofgdev.itch.io/pesadilla-en-el-instituto) and read the 
+[memo](https://github.com/sergiofgdev/godot_project_game/files/9473582/Memoria.pdf) so you can se how it was developed.
 
 
