@@ -3,7 +3,7 @@
 ![image1](https://user-images.githubusercontent.com/98350551/188018502-dc590d0b-b753-4d7e-ae44-7de047edfd68.png)
 
  
-"Pesadilla en el instituto" is my final project for my Certificate of Higher Education in Multiplatform Application Development. It's also my first venture into game development and a new way to test and learn new languages and tools.
+"Pesadilla en el instituto" is my final project for my Software Development HND. It's also my first venture into game development and a new way to test and learn new languages and tools.
 
 Short, but made with love and many hours of learning.
 
